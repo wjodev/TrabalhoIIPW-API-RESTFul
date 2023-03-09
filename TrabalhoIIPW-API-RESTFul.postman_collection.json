@@ -1,0 +1,368 @@
+{
+	"info": {
+		"_postman_id": "dc2c402b-e12d-4d40-a7b8-6173e8e8fcd6",
+		"name": "TrabalhoIIPW-API-RESTFul",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Registrar Admin",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"teste teste\",\r\n    \"email\": \"teste@gmail.com\",\r\n    \"senha\": \"1234\",\r\n    \"confirmarSenha\": \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/admin/registrar",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"admin",
+								"registrar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Admin",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/admin/listar",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"admin",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login Admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"wellington@gmail.com\",\r\n    \"senha\": \"1234\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/admin/login",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"admin",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "checar usuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/admin/checaradmin",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"admin",
+								"checaradmin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Admin",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/admin/buscar/640952c11c9ef33c4b479356",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"admin",
+								"buscar",
+								"640952c11c9ef33c4b479356"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar Admin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"teste teste\",\r\n    \"email\": \"teste1@email.com\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/admin/editar/640943bf8a941fa08646b865",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"admin",
+								"editar",
+								"640943bf8a941fa08646b865"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar Admin",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/admin/deletar/640952c11c9ef33c4b479356",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"admin",
+								"deletar",
+								"640952c11c9ef33c4b479356"
+							],
+							"query": [
+								{
+									"key": null,
+									"value": "640952c11c9ef33c4b479356",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Imovel",
+			"item": [
+				{
+					"name": "Cadastrar Imovel",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"matricula\": \"SP1831\",\r\n    \"cep\": 18783719,\r\n    \"endereco\": \"Rua das flores\",\r\n    \"cidade\": \"Sorocaba\",\r\n    \"estado\": \"São Paulo\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/imovel/cadastrar",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"imovel",
+								"cadastrar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Imovel",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/imovel/listar",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"imovel",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Imovel",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/imovel/buscar/640953c51c9ef33c4b479368",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"imovel",
+								"buscar",
+								"640953c51c9ef33c4b479368"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Imovel",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"matricula\": \"SP1831\",\r\n    \"cep\": 18078719,\r\n    \"endereco\": \"Rua das flores\",\r\n    \"cidade\": \"Sorocaba\",\r\n    \"estado\": \"São Paulo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/imovel/atualizar/640953c51c9ef33c4b479368",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"imovel",
+								"atualizar",
+								"640953c51c9ef33c4b479368"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar Imovel",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/imovel/deletar/640953c51c9ef33c4b479368",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"imovel",
+								"deletar",
+								"640953c51c9ef33c4b479368"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer"
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "http://localhost:5000",
+			"type": "string"
+		},
+		{
+			"key": "TOKEN",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub21lIjoiV2VsbGluZ3RvbiBkZSBKZXN1cyBPbGl2ZWlyYSIsImlkIjoiNjQwOTRlMDQ4MzkyZGUwOTMzNTZiZWZhIiwiaWF0IjoxNjc4MzMxMzk2fQ.ibH3kaijoXNur26rp83d4g06tL_rl-k7XmvL6I__niE",
+			"type": "string"
+		}
+	]
+}
