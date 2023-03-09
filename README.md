@@ -1,0 +1,1 @@
+para rodar a  aplicação abra um novo terminal e execute o comando: npm install e após execute o comando npm start
